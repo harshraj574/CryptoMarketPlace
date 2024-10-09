@@ -17,3 +17,14 @@
         transform: rotate(360deg);
     }
 }
+.coin{
+    display: flex;
+    justify-content: space-around;
+}
+.coinChart{
+    display: flex;
+}
+.coin-info{
+    display: flex;
+    flex-direction: column;
+}

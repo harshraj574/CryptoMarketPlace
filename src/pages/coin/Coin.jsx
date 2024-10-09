@@ -21,7 +21,7 @@ function Coin(){
     fetch(`https://api.coingecko.com/api/v3/coins/${coinId}`, options)
     .then(response => response.json())
     .then(response =>{ 
-        console.log(response);
+        console.log("coin data",response);
         setCoinData(response);
     })
     .catch(err => console.error(err));
@@ -55,6 +55,11 @@ function Coin(){
             </div>
             <div className='coinChart'>
             <LineChart chartData={chartData} />
+            <div className='coin-info'>
+            <p><b>Market Data Cap Change: {currency.symbol}{coinData.market_data.market_cap_change_24h.toLocaleString()}</b></p>
+            <p><b>Price Change 24h: {currency.symbol}{coinData.market_data.price_change_24h}</b></p>
+            </div>
+           
             </div>   
         </div>
         
